@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_31_162729) do
+ActiveRecord::Schema.define(version: 2020_10_31_201443) do
 
   create_table "material_categories", force: :cascade do |t|
     t.string "name"
@@ -28,10 +28,19 @@ ActiveRecord::Schema.define(version: 2020_10_31_162729) do
 
   create_table "planers", force: :cascade do |t|
     t.string "day"
-    t.integer "recept_id"
+    t.integer "recepts_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["recept_id"], name: "index_planers_on_recept_id"
+    t.index ["recepts_id"], name: "index_planers_on_recepts_id"
+  end
+
+  create_table "planers_recepts", force: :cascade do |t|
+    t.integer "planer_id", null: false
+    t.integer "recept_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["planer_id"], name: "index_planers_recepts_on_planer_id"
+    t.index ["recept_id"], name: "index_planers_recepts_on_recept_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -74,7 +83,9 @@ ActiveRecord::Schema.define(version: 2020_10_31_162729) do
   end
 
   add_foreign_key "materials", "material_categories"
-  add_foreign_key "planers", "recepts"
+  add_foreign_key "planers", "recepts", column: "recepts_id"
+  add_foreign_key "planers_recepts", "planers"
+  add_foreign_key "planers_recepts", "recepts"
   add_foreign_key "products", "materials"
   add_foreign_key "recept_connects", "materials"
   add_foreign_key "recept_connects", "recepts"

@@ -1,3 +1,3 @@
 class Planer < ApplicationRecord
-  belongs_to :recept, optional: true
+  has_and_belongs_to_many :recepts, optional: true
 end
