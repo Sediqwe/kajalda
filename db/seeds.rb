@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Planer.create([
+                  { day: 'Hétfő' },
+                  { day: 'Kedd'},
+                  { day: 'Szerda'},
+                  { day: 'Csütörtök'},
+                  { day: 'Péntek'},
+                  { day: 'Szombat'},
+                  { day: 'Vasárnap'}
+              ])
