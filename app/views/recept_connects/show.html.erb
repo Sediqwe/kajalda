@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Recept:</strong>
+  <%= @recept_connect.recept_id %>
+</p>
+
+<p>
+  <strong>Material:</strong>
+  <%= @recept_connect.material_id %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @recept_connect.size_id %>
+</p>
+
+<%= link_to 'Edit', edit_recept_connect_path(@recept_connect) %> |
+<%= link_to 'Back', recept_connects_path %>

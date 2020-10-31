@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Alapanyagok</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Név</th>
+      <th>Kategória</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @materials.each do |material| %>
+      <tr>
+        <td><%= material.name %></td>
+        <td><%= material.material_category.name %></td>        
+        <td><%= link_to 'Show', material %></td>
+        <td><%= link_to 'Edit', edit_material_path(material) %></td>
+        <td><%= link_to 'Destroy', material, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr>
+
+    
+    
+
+<%= link_to 'Új alapanyag', new_material_path, class:"btn btn-primary" %>
+<%= link_to "Alapanyag kategóriák", material_categories_path, class:"btn btn-success"%>  
+<%= link_to "Új alapanyag kategória", new_material_category_path, class:"btn btn-success"%>  

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  recept: one
+  material: one
+  size: one
+
+two:
+  recept: two
+  material: two
+  size: two

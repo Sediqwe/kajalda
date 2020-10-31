@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Neve:</strong>
+  <%= @recept.name %>
+</p>
+
+<p>
+  <strong>Recept tipusa:</strong>
+  <%= @recept.recept_type.name %>
+</p>
+<% @data.each do |re| %>
+  <%= Material.find(re.material_id).name%> -- 
+  <%= Size.find(re.size_id).name%>
+  <%= link_to "Módosít", edit_recept_connect_path, class: "btn btn-success" %><br>
+<% end %>
+
+
+<%= link_to 'Új', new_recept_connect_path, class:"btn btn-primary" %> |
+<%= link_to 'Edit', edit_recept_path(@recept) %> |
+<%= link_to 'Back', recepts_path %>
