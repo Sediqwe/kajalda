@@ -28,10 +28,8 @@ ActiveRecord::Schema.define(version: 2020_10_31_201443) do
 
   create_table "planers", force: :cascade do |t|
     t.string "day"
-    t.integer "recepts_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["recepts_id"], name: "index_planers_on_recepts_id"
   end
 
   create_table "planers_recepts", force: :cascade do |t|
@@ -83,7 +81,6 @@ ActiveRecord::Schema.define(version: 2020_10_31_201443) do
   end
 
   add_foreign_key "materials", "material_categories"
-  add_foreign_key "planers", "recepts", column: "recepts_id"
   add_foreign_key "planers_recepts", "planers"
   add_foreign_key "planers_recepts", "recepts"
   add_foreign_key "products", "materials"

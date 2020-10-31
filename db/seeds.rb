@@ -14,3 +14,38 @@ Planer.create([
                   { day: 'Szombat'},
                   { day: 'Vasárnap'}
               ])
+Size.create([
+                { name: '1 darab'},
+                { name: '10 darab'},
+                { name: '1 liter'},
+                { name: '2 liter'},
+                { name: '1 adag'},
+                { name: '2 adag'}           
+            ])
+
+ReceptType.create([
+                { name: 'Leves'},                       
+                { name: 'Második'}, 
+                { name: 'Sütemény'},                          
+                { name: 'Egytálétel'}                                                                 
+            ])
+Recept.create([
+                { name: 'Almaleves', recept_type_id: '1'},
+                { name: 'Húsleves', recept_type_id: '1'},
+                { name: 'Krumplileves', recept_type_id: '1'},
+                { name: 'Rizskoch', recept_type_id: '2'},
+                { name: 'Székelykáposzta', recept_type_id: '4'}
+            ])
+MaterialCategory.create([
+                { name: 'Zöldség'},                        
+                { name: 'Gyümölcs'},                          
+                { name: 'Tejtermék'},                          
+                { name: 'Hús'},                                                          
+                { name: 'Tartós'}
+            ])
+Material.create([
+                { name: 'Cukor', material_category_id: '4'},
+                { name: 'Alma', material_category_id: '1'},                         
+                { name: 'Tejszín', material_category_id: '2'},
+                { name: 'Darálthús', material_category_id: '3'}
+            ])
