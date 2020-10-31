@@ -6,7 +6,4 @@ class PageController < ApplicationController
   def about
   end
 
-  def planer
-    @recept = Recept.all
-  end
 end
