@@ -5,8 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+recept_types = ReceptType.create([
+                                    {name: 'Test recept type 1'},
+                                    {name: 'Test recept type 2'},
+                                    {name: 'Test recept type 3'}
+                                ])
+
+recepts = Recept.create([
+                            {name: 'Recept1', recept_type: recept_types.first},
+                            {name: 'Recept2', recept_type: recept_types.last}])
+
 Planer.create([
-                  { day: 'Hétfő' },
+                  { day: 'Hétfő', recepts: recepts },
                   { day: 'Kedd'},
                   { day: 'Szerda'},
                   { day: 'Csütörtök'},
