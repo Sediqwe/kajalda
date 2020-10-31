@@ -1,0 +1,2 @@
+class PlanersRecept < ApplicationRecord
+end
