@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Egység</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,7 +13,7 @@
   <tbody>
     <% @sizes.each do |size| %>
       <tr>
-        <td><%= size.name %></td>
+        <td><%= size.unit %></td>
         <td><%= link_to 'Show', size %></td>
         <td><%= link_to 'Edit', edit_size_path(size) %></td>
         <td><%= link_to 'Destroy', size, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -17,7 +17,8 @@
       <tr>
         <td><%= recept_connect.recept.name %></td>
         <td><%= recept_connect.material.name %></td>
-        <td><%= recept_connect.size.name %></td>
+        <td><%= recept_connect.amount %></td>
+        <td><%= recept_connect.unit %></td>
         <td><%= link_to 'Show', recept_connect %></td>
         <td><%= link_to 'Edit', edit_recept_connect_path(recept_connect) %></td>
         <td><%= link_to 'Destroy', recept_connect, method: :delete, data: { confirm: 'Are you sure?' } %></td>

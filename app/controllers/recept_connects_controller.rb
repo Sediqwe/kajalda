@@ -30,10 +30,8 @@ class ReceptConnectsController < ApplicationController
     respond_to do |format|
       if @recept_connect.save
         format.html { redirect_to @recept_connect, notice: 'Recept connect was successfully created.' }
-        format.json { render :show, status: :created, location: @recept_connect }
       else
         format.html { render :new }
-        format.json { render json: @recept_connect.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -44,10 +42,8 @@ class ReceptConnectsController < ApplicationController
     respond_to do |format|
       if @recept_connect.update(recept_connect_params)
         format.html { redirect_to @recept_connect, notice: 'Recept connect was successfully updated.' }
-        format.json { render :show, status: :ok, location: @recept_connect }
       else
         format.html { render :edit }
-        format.json { render json: @recept_connect.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -58,7 +54,6 @@ class ReceptConnectsController < ApplicationController
     @recept_connect.destroy
     respond_to do |format|
       format.html { redirect_to recept_connects_url, notice: 'Recept connect was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
@@ -70,6 +65,6 @@ class ReceptConnectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def recept_connect_params
-      params.require(:recept_connect).permit(:recept_id, :material_id, :size_id)
+      params.require(:recept_connect).permit(:recept_id, :material_id, :amount, :unit)
     end
 end

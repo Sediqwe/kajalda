@@ -1,6 +1,6 @@
 class PlanersController < ApplicationController
   def index
-    @planers = Planer.all
+    @planers = Planer.all   
   end
 
   def show

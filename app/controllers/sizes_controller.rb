@@ -69,6 +69,6 @@ class SizesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def size_params
-      params.require(:size).permit(:name)
+      params.require(:size).permit(:unit, :amount)
     end
 end

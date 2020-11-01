@@ -15,12 +15,11 @@ Planer.create([
                   { day: 'Vasárnap'}
               ])
 Size.create([
-                { name: '1 darab'},
-                { name: '10 darab'},
-                { name: '1 liter'},
-                { name: '2 liter'},
-                { name: '1 adag'},
-                { name: '2 adag'}           
+                { unit: 'kg'},
+                { unit: 'liter'},
+                { unit: 'darab'},
+                { unit: 'zacskó'},
+                { unit: 'csomag'}
             ])
 
 ReceptType.create([

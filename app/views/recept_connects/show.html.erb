@@ -2,17 +2,17 @@
 
 <p>
   <strong>Recept:</strong>
-  <%= @recept_connect.recept_id %>
+  <%= Recept.find(@recept_connect.recept_id).name %>
 </p>
 
 <p>
   <strong>Material:</strong>
-  <%= @recept_connect.material_id %>
+  <%= Material.find(@recept_connect.material_id).name %>
 </p>
 
 <p>
   <strong>Size:</strong>
-  <%= @recept_connect.size_id %>
+  <%= @recept_connect.amount %> <%= @recept_connect.unit %>
 </p>
 
 <%= link_to 'Edit', edit_recept_connect_path(@recept_connect) %> |

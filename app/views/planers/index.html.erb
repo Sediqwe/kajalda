@@ -1,12 +1,12 @@
-<h1>Page#planer</h1>
+<h1>Menü tervező</h1>
 
 <table class="table table-bordered table-dark">
   <thead>
   <tr>
     <th scope="col">#</th>
-    <th scope="col">Leves</th>
-    <th scope="col">Második</th>
-    <th scope="col"></th>
+    <th scope="col">MenüPlan</th>
+    <th scope="col">Menü</th>
+    
   </tr>
   </thead>
   <tbody>
@@ -17,15 +17,25 @@
       <td>
         <%= simple_form_for d do |f| %>
           <%= f.association :recepts, label: false %>
-          <%= f.button :submit %>  
+          
+          <%= f.button :submit, 'Mentés', class:"btn btn-success"%>  
         <% end %>
         
       </td>
-      <td>Husosbödön</td>
-      <td>Mákosguba</td>
+      <td> 
+        
+       <% d.recepts.each do |c|   %>
+        <div style="width:150px" class="btn btn-primary m-1"><%= c.name %></div><br>
+
+
+       
+         
+        
+      <% end %></td>
+      
 
     </tr>
   <% end %>
   </tbody>
 </table>
-<%= link_to "mentés" , new_recept_path, class:"btn btn-success" %>
+

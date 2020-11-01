@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_31_201443) do
+ActiveRecord::Schema.define(version: 2020_11_01_205457) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "fuzzystrmatch"
@@ -230,6 +230,8 @@ ActiveRecord::Schema.define(version: 2020_10_31_201443) do
     t.bigint "size_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "unit"
+    t.float "amount"
     t.index ["material_id"], name: "index_recept_connects_on_material_id"
     t.index ["recept_id"], name: "index_recept_connects_on_recept_id"
     t.index ["size_id"], name: "index_recept_connects_on_size_id"
@@ -255,7 +257,7 @@ ActiveRecord::Schema.define(version: 2020_10_31_201443) do
   end
 
   create_table "sizes", force: :cascade do |t|
-    t.string "name"
+    t.string "unit"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -345,6 +347,5 @@ ActiveRecord::Schema.define(version: 2020_10_31_201443) do
   add_foreign_key "products", "materials"
   add_foreign_key "recept_connects", "materials"
   add_foreign_key "recept_connects", "recepts"
-  add_foreign_key "recept_connects", "sizes"
   add_foreign_key "recepts", "recept_types"
 end

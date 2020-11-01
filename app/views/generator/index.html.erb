@@ -1,0 +1,12 @@
+<h1>Generátor</h1>
+
+
+<% @planers.each do |d| %>
+     <% d.recepts.each do |c|   %>
+        <div style="width:150px" class="btn btn-primary m-1"><%= c.name %></div><br>
+        <% @recept_connect = ReceptConnect.where(recept_id: c.id)%>
+        <% @recept_connect.each do |t| %>
+        <%= Material.find(t.id).name %> kell : <%= t.amount%> <%= t.unit%><br>
+        <% end %>
+        <% end %>
+  <% end %>
