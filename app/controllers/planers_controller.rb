@@ -2,18 +2,19 @@ class PlanersController < ApplicationController
   def index
     @planers = Planer.all
   end
-  def show
-    
-  end
+
+  def show; end
+
   def update
     @planer = Planer.find(params[:id])
-    #render plain: params[:planer].inspect
-    Planer.update(planer_params)
+    @planer.update(planer_params)
   end
-  def create
+
+  def create; end
+
+  private
+
+  def planer_params
+    params.require(:planer).permit( recept_ids:[])
   end
-private
-def planer_params
-  params.require(:planer).permit( recept_ids:[])
-end
 end
